@@ -29,6 +29,8 @@ function generaGriglia(colonne, difficultSelected) {
   }
 }
 
+let punteggio = 0;
+
 function generaCella(i, difficultSelected) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
@@ -78,5 +80,3 @@ function generaBombe(max) {
   }
   return bombe;
 }
-
-let punteggio = 0;
