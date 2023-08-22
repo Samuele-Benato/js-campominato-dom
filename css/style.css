@@ -1,0 +1,32 @@
+#griglia {
+  width: 80%;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.difficult_easy {
+  width: calc(100% / 10);
+}
+
+.difficult_medium {
+  width: calc(100% / 9);
+}
+
+.difficult_hard {
+  width: calc(100% / 7);
+}
+
+.azure {
+  background-color: rgb(26, 84, 230);
+  color: aliceblue;
+  border: 1px solid aliceblue;
+}
