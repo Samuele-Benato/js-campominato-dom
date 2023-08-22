@@ -33,20 +33,30 @@ function generaCella(i, difficultSelected) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
 
+  let elencoBombe;
+
   if (difficultSelected == "100") {
     cell.classList.add("difficult_easy");
-  }
-  if (difficultSelected == "81") {
+    elencoBombe = generaBombe(100);
+    console.log(elencoBombe);
+  } else if (difficultSelected == "81") {
     cell.classList.add("difficult_medium");
-  }
-  if (difficultSelected == "49") {
+    elencoBombe = generaBombe(81);
+  } else if (difficultSelected == "49") {
     cell.classList.add("difficult_hard");
+    elencoBombe = generaBombe(49);
   }
 
   cell.innerText = i;
 
   cell.addEventListener("click", function () {
     this.classList.add("azure_cells");
+
+    if (bombe.includes(i)) {
+      cell.classList.add("death_cell");
+      alert("Boom!");
+      grid.innerHTML = "";
+    }
     console.log(i);
   });
   return cell;
@@ -58,9 +68,8 @@ function generaCella(i, difficultSelected) {
 function generaNumeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-
+let bombe = [];
 function generaBombe(max) {
-  let bombe = [];
   while (bombe.length < 16) {
     let bomba = generaNumeroRandom(1, max);
     if (!bombe.includes(bomba)) bombe.push(bomba);

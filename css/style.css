@@ -36,6 +36,10 @@
   border: 1px solid aliceblue;
 }
 
+.death_cell {
+  background-color: black;
+}
+
 .orange {
   background-color: orange;
 }
