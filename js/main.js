@@ -50,12 +50,14 @@ function generaCella(i, difficultSelected) {
   cell.innerText = i;
 
   cell.addEventListener("click", function () {
-    this.classList.add("azure_cells");
-
     if (bombe.includes(i)) {
       cell.classList.add("death_cell");
-      alert("Boom!");
+      alert("Boom! hai perso ... sei riuscito a fare " + punteggio + " passi");
       grid.innerHTML = "";
+      punteggio = 0;
+    } else {
+      punteggio++;
+      this.classList.add("azure_cells");
     }
     console.log(i);
   });
@@ -76,3 +78,5 @@ function generaBombe(max) {
   }
   return bombe;
 }
+
+let punteggio = 0;
