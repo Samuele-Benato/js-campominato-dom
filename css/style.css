@@ -25,8 +25,17 @@
   width: calc(100% / 7);
 }
 
-.azure {
+.azure_title {
+  color: rgb(26, 84, 230);
+  font-family: "Times New Roman", Times, serif;
+}
+
+.azure_cells {
   background-color: rgb(26, 84, 230);
   color: aliceblue;
   border: 1px solid aliceblue;
+}
+
+.orange {
+  background-color: orange;
 }

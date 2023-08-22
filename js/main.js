@@ -35,25 +35,35 @@ function generaCella(i, difficultSelected) {
 
   if (difficultSelected == "100") {
     cell.classList.add("difficult_easy");
-    generaNumeroRandom(1, 100);
   }
   if (difficultSelected == "81") {
     cell.classList.add("difficult_medium");
-    generaNumeroRandom(1, 81);
   }
   if (difficultSelected == "49") {
     cell.classList.add("difficult_hard");
-    generaNumeroRandom(1, 49);
   }
 
   cell.innerText = i;
 
   cell.addEventListener("click", function () {
-    this.classList.add("azure");
+    this.classList.add("azure_cells");
     console.log(i);
   });
   return cell;
 }
 
-const generaNumeroRandom = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+// const generaNumeroRandom = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1) + min);
+
+function generaNumeroRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function generaBombe(max) {
+  let bombe = [];
+  while (bombe.length < 16) {
+    let bomba = generaNumeroRandom(1, max);
+    if (!bombe.includes(bomba)) bombe.push(bomba);
+  }
+  return bombe;
+}
