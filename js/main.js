@@ -40,7 +40,6 @@ function generaCella(i, difficultSelected) {
   if (difficultSelected == "100") {
     cell.classList.add("difficult_easy");
     elencoBombe = generaBombe(100);
-    console.log(elencoBombe);
   } else if (difficultSelected == "81") {
     cell.classList.add("difficult_medium");
     elencoBombe = generaBombe(81);
@@ -50,6 +49,7 @@ function generaCella(i, difficultSelected) {
   }
 
   cell.innerText = i;
+  // let celleLibereTotali = difficultSelected - bombe;
 
   cell.addEventListener("click", function () {
     if (bombe.includes(i)) {
@@ -61,7 +61,13 @@ function generaCella(i, difficultSelected) {
       punteggio++;
       this.classList.add("azure_cells");
     }
+
+    // if ((punteggio = celleLibereTotali)) {
+    //   alert("Congratulazioni sei riuscito a superare il CAMPO MINATO");
+    // }
+
     console.log(i);
+    console.log(elencoBombe);
   });
   return cell;
 }
@@ -72,7 +78,9 @@ function generaCella(i, difficultSelected) {
 function generaNumeroRandom(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
 let bombe = [];
+
 function generaBombe(max) {
   while (bombe.length < 16) {
     let bomba = generaNumeroRandom(1, max);
